@@ -1,0 +1,42 @@
+package com.study.solidPrinciples.liskovSubstitution.violating;
+
+/**
+ * @author Arti Harde
+ *
+ * Subclass of Bike - implements all Bike class behavior
+ */
+public class MotorCycle implements Bike {
+
+    String company;
+    boolean isEngineOn;
+    int speed;
+
+    public MotorCycle(String company, int speed) {
+        this.company = company;
+        this.speed = speed;
+    }
+
+    @Override
+    public void turnOnEngine() {
+        this.isEngineOn = true;
+        System.out.println("Engine is ON!");
+    }
+
+    @Override
+    public void turnOffEngine() {
+        this.isEngineOn = false;
+        System.out.println("Engine is OFF!");
+    }
+
+    @Override
+    public void accelerate() {
+        this.speed = this.speed + 10; // increase the speed
+        System.out.println("MotorCycle Speed: " + this.speed);
+    }
+
+    @Override
+    public void applyBrakes() {
+        this.speed = this.speed - 5; // decrease the speed
+        System.out.println("MotorCycle Speed: " + this.speed);
+    }
+}
