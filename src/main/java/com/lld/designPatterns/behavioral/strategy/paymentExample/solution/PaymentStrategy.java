@@ -1,0 +1,9 @@
+package com.lld.designPatterns.behavioral.strategy.paymentExample.solution;
+
+/**
+ * @author Arti Harde
+ */
+public interface PaymentStrategy {
+
+    void pay(double amount);
+}
